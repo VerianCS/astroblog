@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import TopBar from "../components/TopBar.astro"
+import FooterGeneral from "../components/FooterGeneral.astro";
+import IndexArticles from "../components/IndexArticles.astro";
+
+
+const response = await fetch('http://localhost:8080/get_posts.php');
+
+const posts = await response.json();
+
+---
+
+
+
+<Layout title="Releasing Code blog!"></Layout>
+<main>
+	<TopBar></TopBar>
+		<div class="container mx-auto px-4 mb-8 p-8 overflow-y-auto">
+		  <h1 class="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 mb-8 p-4">Blog Posts</h1>
+		  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{posts.map((post) => (
+			  <Card title={post.title} id={post.id} />
+			))}
+		  </div>
+		</div>
+	</div>	
+
+	<div class="separator-thingy m-8 p-10">
+
+	</div>
+	<FooterGeneral></FooterGeneral>
+</main>
+

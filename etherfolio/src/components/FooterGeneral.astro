@@ -1,0 +1,60 @@
+---
+const currentYear = new Date().getFullYear();
+
+// Footer.astro
+---
+
+<footer class="footer-general p-8 mt-8">
+    <div class="footer-content">
+      <h1 class="footer-title">Contact</h1>
+      <div class="contact-info">
+        <a href="https://github.com/yourusername" class="contact-link">
+          <span class="icon">&#x1F4BB;</span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" class="contact-link">
+          <span class="icon">&#x1F4BC;</span>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://yourwebsite.com" class="contact-link">
+          <span class="icon">&#x1F310;</span>
+          <span>Website</span>
+        </a>
+        <a href="tel:+1234567890" class="contact-link">
+          <span class="icon">&#x1F4DE;</span>
+          <span>+1 (234) 567-890</span>
+        </a>
+      </div>
+        <span class="copyright-span text-white">Copyright © NVAEIL - {currentYear} </span>
+    </div>
+  </footer>
+  
+  <style>
+    .footer-general {
+      @apply fixed bottom-0 left-0 right-0 backdrop-blur-3xl bg-black/30 p-6;
+      box-shadow: 
+        20px 20px 60px #1a1a1a,
+        -20px -20px 60px #262626;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  
+    .footer-content {
+      @apply max-w-7xl mx-auto flex flex-col items-center;
+    }
+  
+    .footer-title {
+      @apply text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 mb-4;
+    }
+  
+    .contact-info {
+      @apply flex flex-wrap justify-center gap-4;
+    }
+  
+    .contact-link {
+      @apply flex items-center gap-2 text-purple-300 hover:text-purple-100 transition-colors duration-300;
+    }
+  
+    .icon {
+      @apply text-lg;
+    }
+  </style>

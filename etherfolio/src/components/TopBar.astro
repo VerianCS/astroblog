@@ -1,0 +1,72 @@
+---
+---
+
+<header id="neumorphicHeader" class="sticky top-0 left-0 right-0 z-50 p-4 transition-colors text-gray-200 duration-300 ease-in-out mb-8">
+  <div class="container mx-auto">
+    <nav class="flex items-center justify-start">
+      <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Releasing Code Blog</h1>
+      <a href="newpost" class="mx-8"> <!-- Add margin here -->
+        <h1 class="text-2xl font-bold">Create Post</h1>
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<div class="h-20"></div> 
+
+
+
+<script>
+  /*
+  const header = document.getElementById('neumorphicHeader');
+  const themeToggle = document.getElementById('themeToggle');
+  let isDark = true;
+
+ 
+  function toggleTheme() {
+    isDark = !isDark;
+    if (isDark) {
+      header.classList.remove('bg-white', 'text-gray-900', 'shadow-white-neu');
+      header.classList.add('bg-gray-900', 'text-white', 'shadow-purple-neu');
+      themeToggle.classList.remove('bg-gray-900', 'text-white');
+      themeToggle.classList.add('bg-white', 'text-gray-900');
+    } else {
+      header.classList.remove('bg-gray-900', 'text-white', 'shadow-purple-neu');
+      header.classList.add('bg-white', 'text-gray-900', 'shadow-white-neu');
+      themeToggle.classList.remove('bg-white', 'text-gray-900');
+      themeToggle.classList.add('bg-gray-900', 'text-white');
+    }
+  }
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Initialize the dark theme
+  toggleTheme();
+*/
+</script>
+
+
+<style>
+  #neumorphicHeader {
+    box-shadow: 
+      5px 5px 10px rgba(0, 0, 0, 0.3),
+      -5px -5px 10px rgba(128, 0, 128, 0.1),
+      inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+      inset -5px -5px 10px rgba(128, 0, 128, 0.1);
+  }
+
+  .shadow-white-neu {
+    box-shadow: 
+      5px 5px 10px rgba(0, 0, 0, 0.1),
+      -5px -5px 10px rgba(255, 255, 255, 0.5),
+      inset 5px 5px 10px rgba(0, 0, 0, 0.05),
+      inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+    #neumorphicHeader {
+      backdrop-filter: blur(10px);
+    }
+  }
+</style>

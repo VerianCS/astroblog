@@ -1,0 +1,36 @@
+---
+// File: src/pages/post/[id].astro
+export async function getStaticPaths() {
+  const response = await fetch('http://localhost:8080/get_posts.php');
+  const posts = await response.json();
+
+  return posts.map((post) => ({
+    params: { id: post.id.toString(), content: post.content.toString() },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{post.title}</title>
+</head>
+<body class="bg-gray-900 min-h-screen py-8 text-purple-200">
+  <div class="container mx-auto px-4">
+    <div class="bg-gray-800 rounded-2xl p-8 shadow-lg">
+      <h1 class="text-3xl font-bold mb-4 text-purple-400">{post.title}</h1>
+      <p class="text-purple-300 mb-4">Post ID: {post.id}</p>
+      <div class="bg-gray-700 rounded-xl p-6 mb-6">
+        <p class="text-purple-100">{post.content}</p>
+      </div>
+      <a href="/" class="inline-block bg-purple-600 text-gray-900 px-6 py-2 rounded-full hover:bg-purple-500 transition-colors duration-300 ease-in-out">
+        ← Back to all posts
+      </a>
+    </div>
+  </div>
+</body>
+</html>
